@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+  }
+   
+  body {
+    background-color: #fdd0e8;
+    font-family: sans-serif;
+  }
+   
+  .content {
+    grid-area: content;
+  }
+   
+  .sidebar {
+    grid-area: sidebar;
+    background: linear-gradient(
+      to right,
+      rgb(245, 79, 143),
+      rgb(247, 105, 250),
+      rgba(110, 125, 253, 1)
+    );
+    justify-content: center;
+  }
+   
+  .footer {
+    grid-area: footer;
+    background: #ee8ead;
+  }
+   
+  .container {
+    font-size: 1.5em;
+    width: 100%;
+    height: 100;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 'sidebar' 'content' 'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 800px 250px;
+  }
+   
+  .content,
+  .sidebar,
+  .footer {
+    padding: 1em;
+  }
+   
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+   
+  nav li {
+    list-style: none;
+    padding: 1em 0;
+  }
+   
+  nav li a {
+    color: rgb(31, 98, 252);;
+    font-weight: 700;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+   
+  nav li a:hover {
+    opacity: 1;
+  }
+   
+  .hero {
+    max-width: 90 px;
+    margin: 0 auto;
+    text-align: center;
+  }
+   
+  .hero img {
+    width: 200px;
+  }
+   
+  .hero h1 {
+    font-size: 2em;
+    font-weight: 300;
+    color: rgb(255, 121, 190);;
+  }
+  .hero h2 {
+    font-size: 2;
+    font-weight: 100;
+    color: rgb(255, 121, 190);;
+  }
+
+   
+  .hero p {
+    font-weight: 300;
+    line-height: 1.3em;
+    color: rgb(31, 98, 252);;
+  }
+   
+  .action-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 181, 222);
+    font-weight: 700;
+    background: #fb568a;
+    padding: 0.5em 2em;
+    border-radius: 60px;
+    margin: 1em 0;
+    transition: 0.3s;
+  }
+   
+  footer ul {
+    max-width: 640px;
+    margin: 2em auto;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+   
+  footer ul li {
+    list-style: none;
+    align-self: flex-end;
+  }
+   
+  footer ul li a {
+    text-decoration: none;
+    color: #335fa5;
+  }
+   
+  footer ul li img {
+    width: 30%;
+  }
+   
+  footer p {
+    font-size: 0.8em;
+  }
+   
+  @media (min-width: 1040px) {
+    .container {
+      grid-template-areas: 'sidebar content' 'sidebar footer';
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 300px 1f;
+    }
+   
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+   
+    .sidebar {
+      background: linear-gradient(
+        rgb(255, 190, 215),
+        rgb(168, 203, 255),
+        rgb(177, 144, 255)
+      );
+      padding-top: 1em;
+    }
+   
+    .hero {
+      text-align: left;
+      margin: 1em 0;
+    }
+   
+    .hero img {
+      width: 100px;
+      float: top;
+    }
+   
+    .hero h1 {
+      font-size: 3em;
+    }
+   
+    .hero p {
+      width: 60%;
+    }
+   
+    footer ul {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1em 0;
+    }
+   
+    footer ul li a img {
+      width: 50%;
+    }
+  }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="porto.html">Portofolio</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <main class="content">
+          <section class="hero">
+            <img src="gambar/Online.png" alt="" />
+            <div class="hero-content">
+              <h1>Profesi</h1>
+              <br>
+              <h2>Junior Content Writer at Dicoding</h2>
+              <br>
+              <p style="text-align: justify;">
+                Seorang Junior Content Writer juga berkontribusi dalam pembuatan materi kursus online seperti modul, kuis, dan tugas akhir. Riset tentang tren teknologi terbaru menjadi bagian penting dari pekerjaan ini, 
+                sehingga konten yang disajikan selalu relevan dan up-to-date. Posisi ini juga melibatkan kolaborasi dengan tim pengembang, desainer, dan produk untuk memastikan kualitas dan konsistensi materi. 
+                Dengan kemampuan menulis yang baik dan pengetahuan dasar tentang teknologi, profesi ini memberi peluang untuk terus belajar dan berkembang dalam dunia teknologi sambil berkontribusi dalam edukasi digital di Indonesia.
+              </p>
+              <a href="pp.html" class="action-btn">Profile Saya</a>
+            </div>
+          </section>
+        </main>
+        <div class="footer">
+          <footer>
+            <ul>
+              <li>
+                <img src="gambar/instagram.png" alt="ig"/><a><p>Instagram</p></a>
+              </li>
+              <li>
+                <img src="gambar/facebook.png" alt="fb"/><a><p>Facebook</p></a>
+              </li>
+              <li>
+                <img src="gambar/twitter.png" alt="twitt" /><a><p>Twitter</p></a>
+              </li>
+              <li>
+                <img src="gambar/telegram.png" alt="tele"/><a><p>Telegram</p></a>
+              </li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+</body>
+</html>
+

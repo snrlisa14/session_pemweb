@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      .container {
+        background-color: #bdd8f8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(49, 51, 184, 0.413);
+        width: 300px;
+      }
+      
+      h2 {
+        text-align: center;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #3c66c9;
+      border-radius: 5px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4f9ede;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #054375;
+    }
+  
+    p {
+      text-align: center;
+    }
+  
+    a {
+      color: #165f9bee;
+      text-decoration: none;
+    }
+  
+    a:hover {
+      text-decoration: underline;
+    }
+  
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/auth/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have a account? <a href="/auth/register">Register here</a></p>
+    </div>
+</body>
+</html>
