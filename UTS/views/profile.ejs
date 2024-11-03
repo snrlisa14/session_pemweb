@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Pelajar</title>
+    <style>
+        /* Reset CSS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f9ff;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0288d1, #00acc1);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 4px solid #00838f;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+
+        /* Navigasi */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00acc1;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0277bd;
+            transform: scale(1.05);
+        }
+
+        /* Konten */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .container h2 {
+            font-size: 2.2em;
+            color: #0288d1;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        /* Gaya untuk section manfaat */
+        #benefits {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #e1f5fe;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #benefits h2 {
+            font-size: 2em;
+            color: #0288d1;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        #benefits p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        #benefits ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        #benefits ul li {
+            font-size: 1.1em;
+            margin: 8px 0;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* Bagian Tips Memulai */
+        .tips {
+            background-color: #e1f5fe; 
+            padding: 20px;
+            border-left: 5px solid #0288d1; 
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tips h3 {
+            color: #0288d1; 
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .tips p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .tips ol {
+            list-style-position: inside; /* Posisi list untuk kesejajaran */
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .tips li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .tips li strong {
+            color: #0288d1; 
+        }
+
+
+        .container p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* CRUD section */
+        .crud-section {
+            margin-top: 30px;
+            background-color: #e1f5fe;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .crud-section h2 {
+            color: #0288d1;
+            margin-bottom: 10px;
+        }
+
+        .crud-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #0288d1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .crud-links a:hover {
+            background-color: #0277bd;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0288d1;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        footer p { line-height: 1.5; }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 10px; }
+
+            nav a { margin: 5px 0; width: 100%; text-align: center; }
+
+            header h1 { font-size: 2.5em; }
+
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Mindful Pelajar</h1>
+        <p>Menemukan ketenangan dan keseimbangan melalui praktik mindfulness untuk pelajar.</p>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="#about">Tentang</a>
+        <a href="#benefits">Manfaat</a>
+        <a href="#tips">Tips Memulai</a>
+        <a href="#crud">CRUD Aktivitas </a>
+        <a href="/auth/login">Logout</a>
+    </nav>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <section id="about">
+            <h2>Tentang Mindfulness</h2>
+            <p>Mindfulness adalah praktik kesadaran penuh yang memungkinkan kita hadir di setiap momen tanpa penilaian. Bagi pelajar, ini sangat penting untuk membantu mengelola stres, meningkatkan fokus, dan memperkuat kesehatan mental. Dengan adopsi mindfulness, pelajar bisa lebih peka terhadap emosi dan kondisi mereka sendiri.</p>
+        </section>
+
+        <section id="benefits">
+            <h2>Manfaat Mindfulness bagi Pelajar</h2>
+            <ul>
+                <li>Meningkatkan fokus dan konsentrasi.</li>
+                <li>Mengurangi tingkat stres dan kecemasan.</li>
+                <li>Meningkatkan kemampuan mengatasi tekanan akademik.</li>
+                <li>Memperkuat kesejahteraan emosional dan mental.</li>
+            </ul>
+        </section>
+        <br>
+        <section id="tips" class="tips">
+            <h3>Tips Memulai Praktik Mindfulness</h3>
+            <ol>
+                <li><strong>Luangkan waktu:</strong> Dedikasikan 5-10 menit setiap hari untuk meditasi atau sekadar duduk tenang.</li>
+                <li><strong>Fokus pada pernapasan:</strong> Amati napas Anda, dan biarkan pikiran lain mengalir tanpa penilaian.</li>
+                <li><strong>Praktikkan rasa syukur:</strong> Luangkan waktu untuk merenungkan hal-hal yang Anda syukuri.</li>
+                <li><strong>Ikuti kelas atau workshop:</strong> Cari tahu tentang kelas mindfulness di sekolah atau komunitas Anda.</li>
+            </ol>
+        </section>
+
+ <!-- Section CRUD -->
+ <section id="crud" class="CRUD">
+    <h2>Kelola Data Aktivitas</h2>
+    <p>Lakukan operasi CRUD untuk mengelola aktivitas Anda.</p>
+    <div class="crud-links">
+        <a href="/add">Tambah Aktivitas</a>
+        <a href="/view">Lihat Aktivitas</a>
+    </div>
+</div>
+</div>
+        
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Siti Nurkholizah SIK A UTS 2024 Mindful Pelajar.  Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>
