@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Aktivitas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #343a40;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table th, table td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+        }
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            margin: 0 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+    <script>
+        function confirmAction(message, url) {
+            if (confirm(message)) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Daftar Aktivitas</h1>
+    <div class="container">
+        <div class="alert alert-info text-center" role="alert">
+            Berikut adalah daftar aktivitas yang tersedia.
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Aktivitas</th>
+                    <th>Deskripsi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% activities.forEach(activities => { %>
+                    <tr>
+                        <td><%= activities.id %></td>
+                        <td><%= activities.name %></td>
+                        <td><%= activities.description %></td>
+                        <td>
+                            <a href="/add" class="btn btn-success btn-sm" onclick="confirmAction('Apakah Anda yakin ingin membuat aktivitas baru?', '/add'); return false;">Create</a>
+                            <a href="/activity/edit/<%= activities.id %>" class="btn btn-warning btn-sm" onclick="confirmAction('Apakah Anda yakin ingin mengedit aktivitas ini?', '/activity/edit/<%= activities.id %>'); return false;">Edit</a>
+                            <form action="/activity/delete/<%= activities.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus aktivitas ini?');">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <a href="/auth/profile" class="btn btn-secondary">Kembali ke Halaman Utama</a>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
